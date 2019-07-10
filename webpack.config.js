@@ -6,11 +6,14 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name][hash].js',
+    filename: '[name].js',
+    publicPath: '/',
   },
   stats: 'minimal',
   devServer: {
     historyApiFallback: true,
+    open: true,
+    hot: true,
   },
   module: {
     rules: [

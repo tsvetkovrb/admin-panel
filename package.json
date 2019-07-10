@@ -14,12 +14,12 @@
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.1",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
@@ -40,10 +40,14 @@
     "babel-polyfill": "^6.26.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.5"
+    "react-hot-loader": "^4.12.5",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.3",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
   "husky": {
