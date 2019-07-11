@@ -1,0 +1,49 @@
+@import 'constants/colors.scss';
+
+.employee-card {
+  width: 280px;
+  height: 400px;
+  box-shadow: 0px 2px 6px $shadow;
+  border-radius: 8px;
+  overflow: hidden;
+
+  margin: 40px 20px 0 0;
+
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  cursor: pointer;
+
+  text-decoration: none;
+  
+  &:hover {
+    box-shadow: 0px 3px 10px $shadow;
+  }
+
+  &__profile-photo {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    padding: 20px;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__position {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__email {
+    margin: 0;
+    color: $grey;
+  }
+}

@@ -4,18 +4,18 @@ import 'babel-polyfill';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { StaffListPage } from 'pages/StaffListPage';
-import { EmployeePage } from 'pages/EmployeePage';
-import { NotFountPage } from 'pages/NotFountPage';
+import { StaffListPageContainer as StaffListPage } from 'containers/StaffListPageContainer';
+import { EmployeePage } from 'pages/EmployeePage/EmployeePage';
+import { NotFountPage } from 'pages/NotFountPage/NotFountPage';
 
 import './App.scss';
 
 const App = () => (
   <main className='main'>
     <Switch>
-      <Route exact path='/employees' component={StaffListPage} />
-      <Route path='/employees/:id' component={EmployeePage} />
-      <Redirect exact from='/' to='/employees' />
+      <Route exact path='/staff' component={StaffListPage} />
+      <Route path='/staff/:id' component={EmployeePage} />
+      <Redirect exact from='/' to='/staff' />
       <Route component={NotFountPage} />
     </Switch>
   </main>

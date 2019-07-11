@@ -1,0 +1,49 @@
+@import 'constants/colors.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: $dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global classes */
+
+.container {
+  width: 1300px;
+  padding: 0 50px;
+
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.fdc {
+  flex-direction: column;
+}
+
+.fdr {
+  flex-direction: row;
+}
+
+.fww {
+  flex-wrap: wrap;
+}

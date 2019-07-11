@@ -94,6 +94,7 @@ module.exports = {
       pages: path.resolve(__dirname, './src/pages'),
       store: path.resolve(__dirname, './src/store'),
       static: path.resolve(__dirname, './src/static'),
+      api: path.resolve(__dirname, './src/api'),
     },
   },
 };
