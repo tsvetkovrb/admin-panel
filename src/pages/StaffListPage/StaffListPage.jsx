@@ -22,7 +22,7 @@ export class StaffListPage extends React.Component {
       <div className='staff-list flex fdc'>
         <div className='container'>
           <h1 className='staff-list__title'>Staff List:</h1>
-          <div className='flex fww'>{this.renderStaffList(staffList)}</div>
+          <div className='staff-list__content'>{this.renderStaffList(staffList)}</div>
         </div>
       </div>
     );

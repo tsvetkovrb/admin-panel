@@ -2,25 +2,34 @@
 
 .employee-card {
   width: 280px;
-  height: 400px;
+  height: 350px;
   box-shadow: 0px 2px 6px $shadow;
   border-radius: 8px;
   overflow: hidden;
 
   margin: 40px 20px 0 0;
 
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   cursor: pointer;
 
   text-decoration: none;
-  
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
   &:hover {
     box-shadow: 0px 3px 10px $shadow;
   }
 
+  &__image {
+    height: 210px;
+    background-color: #ddd;
+  }
+
   &__profile-photo {
-    height: 60%;
+    height: 100%;
     width: 100%;
     object-fit: cover;
   }
@@ -37,13 +46,7 @@
 
   &__position {
     margin: 0;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
     margin-bottom: 10px;
-  }
-
-  &__email {
-    margin: 0;
-    color: $grey;
   }
 }

@@ -5,7 +5,8 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { StaffListPageContainer as StaffListPage } from 'containers/StaffListPageContainer';
-import { EmployeePage } from 'pages/EmployeePage/EmployeePage';
+import { EmployeePageContainer as EmployeePage } from 'containers/EmployeePageContainer';
+
 import { NotFountPage } from 'pages/NotFountPage/NotFountPage';
 
 import './App.scss';
