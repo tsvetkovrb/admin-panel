@@ -5,6 +5,7 @@ import { EmployeePage } from 'pages/EmployeePage/EmployeePage';
 
 const mapState = ({ employee }) => ({
   employee: employee.employee,
+  isLoading: employee.isFetching,
 });
 
 const mapDispatch = {

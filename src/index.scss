@@ -4,11 +4,22 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   color: $dark;
+  letter-spacing: 0.03em;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 /* Global classes */
@@ -49,7 +60,54 @@ body {
 }
 
 .text {
+  &_size-20 {
+    font-size: 20px;
+  }
   &_bold {
     font-weight: bold;
-  }  
+  }
+}
+
+.box {
+  box-shadow: 0px 2px 6px $shadow;
+  border-radius: 8px;
+}
+
+// margins
+
+.m {
+  &-0 {
+    margin: 0;
+  }
+
+  &b {
+    &10 {
+      margin-bottom: 20px;
+    }
+
+    &20 {
+      margin-bottom: 20px;
+    }
+
+    &30 {
+      margin-bottom: 30px;
+    }
+
+    &40 {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/* Buttons */
+
+.button {
+  border: none;
+  background-color: #ccc;
+  border-radius: 4px;
+
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,0 +1,29 @@
+.comment {
+  position: relative;
+  padding: 10px;
+  background-color: #eee;
+
+  border-radius: 5px;
+
+  width: 590px;
+
+  &::after {
+    content: '';
+    position: absolute;
+
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-left: 10px solid #eee;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
