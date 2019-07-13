@@ -38,6 +38,7 @@
         "devDependencies": true
       }
     ],
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-useless-escape": "off"
   }
 }

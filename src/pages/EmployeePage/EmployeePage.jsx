@@ -2,6 +2,7 @@ import React from 'react';
 
 import './EmployeePage.scss';
 import { Comment } from 'components/Comment/Comment';
+// import { AddCommentForm } from 'components/Forms/AddCommentForm/AddCommentForm';
 
 export class EmployeePage extends React.Component {
   componentDidMount() {
@@ -52,7 +53,8 @@ export class EmployeePage extends React.Component {
             <div className='employee-page__comments'>
               <h4 className='employee-page__comments-title mb10'>Comments: </h4>
               <div className='comments mb20'>{this.renderComments(comments)}</div>
-              <p className='button'>Add a comment</p>
+              {/* <AddCommentForm /> */}
+              <p className='button employee-page__button'>Add a comment</p>
             </div>
           </div>
         </div>

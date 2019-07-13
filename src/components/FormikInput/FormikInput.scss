@@ -1,0 +1,10 @@
+.formik-input {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+
+  &__error {
+    margin-left: 10px;
+  }
+}

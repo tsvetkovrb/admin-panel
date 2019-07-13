@@ -1,0 +1,13 @@
+.add-comment-form {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    &:disabled {
+      background-color: tomato;
+      &:hover {
+        background-color: tomato;
+      }
+    }
+  }
+}

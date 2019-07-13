@@ -63,8 +63,15 @@ h6 {
   &_size-20 {
     font-size: 20px;
   }
+
   &_bold {
     font-weight: bold;
+  }
+
+  &_color {
+    &-error {
+      color: tomato;
+    }
   }
 }
 
@@ -102,12 +109,49 @@ h6 {
 /* Buttons */
 
 .button {
+  display: inline-block;
+
+  line-height: 40px;
+
+  padding: 0 10px;
+
   border: none;
-  background-color: #ccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
 
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease-in;
+
+  &:hover {
+    background-color: $dark;
+
+    color: #fff;
+  }
+}
+
+/* Inputs */
+.input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+
+  padding: 0 10px;
+
+  height: 40px;
+
+  outline: transparent;
+
+  font-size: 20px;
+
+  margin-bottom: 5px;
+
+  &::placeholder {
+    color: #b1b0b0;
+  }
+
+  &.error {
+    border-bottom: 1px solid tomato;
+  }
 }
