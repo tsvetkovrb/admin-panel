@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { AddCommentForm } from 'components/Forms/AddCommentForm/AddCommentForm';
+import { CommentsList } from 'components/CommentsList/CommentsList';
+
 import './EmployeePage.scss';
-import { Comment } from 'components/Comment/Comment';
-// import { AddCommentForm } from 'components/Forms/AddCommentForm/AddCommentForm';
 
 export class EmployeePage extends React.Component {
+  state = {
+    showCommentForm: false,
+  };
+
   componentDidMount() {
     const {
       fetchEmployee,
@@ -15,27 +20,15 @@ export class EmployeePage extends React.Component {
     fetchEmployee(id);
   }
 
-  renderComments = (comments = []) => comments.map(comment => <Comment comment={comment.text} />);
+  toggleBetweenFormAndList = () => {
+    this.setState(prevState => ({
+      showCommentForm: !prevState.showCommentForm,
+    }));
+  }
 
   render() {
-    const comments = [
-      {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, provident!',
-      },
-      {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, provident!',
-      },
-      {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, provident!',
-      },
-      {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, provident!',
-      },
-      {
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, provident!',
-      },
-    ];
-    const { employee } = this.props;
+    const { employee, sendComment } = this.props;
+    const { showCommentForm } = this.state;
     return (
       <div className='employee-page flex jcc aic'>
         <div className='employee-page__content box'>
@@ -51,10 +44,25 @@ export class EmployeePage extends React.Component {
               <span>{employee.address}</span>
             </p>
             <div className='employee-page__comments'>
-              <h4 className='employee-page__comments-title mb10'>Comments: </h4>
-              <div className='comments mb20'>{this.renderComments(comments)}</div>
-              {/* <AddCommentForm /> */}
-              <p className='button employee-page__button'>Add a comment</p>
+              {showCommentForm ? (
+                <AddCommentForm
+                  id={employee.id}
+                  showCommentsList={this.toggleBetweenFormAndList}
+                  sendComment={sendComment}
+                />
+              ) : (
+                <React.Fragment>
+                  <CommentsList comments={employee.comments} />
+                  <button
+                    type='button'
+                    className='button employee-page__button'
+                    onClick={this.toggleBetweenFormAndList}
+                  >
+                    Add a comment
+                  </button>
+                </React.Fragment>
+              )}
+
             </div>
           </div>
         </div>

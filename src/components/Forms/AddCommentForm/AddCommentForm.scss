@@ -2,12 +2,8 @@
   display: flex;
   flex-direction: column;
 
-  &__button {
-    &:disabled {
-      background-color: tomato;
-      &:hover {
-        background-color: tomato;
-      }
-    }
+  &__buttons {
+    margin-top: 40px;
+    display: flex;
   }
 }
