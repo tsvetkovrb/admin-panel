@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { AddCommentFormContainer as AddCommentForm } from 'containers/AddCommentFormContainer';
+import { StaffCauruselContainer as StaffCaurusel } from 'containers/StaffCauruselContainer';
 
 import { CommentsList } from 'components/CommentsList/CommentsList';
 import { LoadingWrapper } from 'components/LoadingWrapper/LoadingWrapper';
@@ -13,6 +15,22 @@ export class EmployeePage extends React.Component {
   };
 
   componentDidMount() {
+    this.fetchEmployeeData();
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+
+    if (prevProps.match.params.id !== id) {
+      this.fetchEmployeeData();
+    }
+  }
+
+  fetchEmployeeData = () => {
     const {
       fetchEmployee,
       match: {
@@ -20,7 +38,7 @@ export class EmployeePage extends React.Component {
       },
     } = this.props;
     fetchEmployee(id);
-  }
+  };
 
   toggleBetweenFormAndList = () => {
     this.setState(prevState => ({
@@ -51,42 +69,50 @@ export class EmployeePage extends React.Component {
     const { showCommentForm } = this.state;
 
     return (
-      <LoadingWrapper
-        loading={isLoadingEmployeeData}
-        hasError={hasError}
-        errorMessage={error.message}
-      >
-        <div className='employee-page flex jcc aic'>
-          <div className='employee-page__content box'>
-            <img
-              className='employee-page__image'
-              src={employee.photo}
-              alt={employee.name}
-            />
-            <div className='employee-page__description'>
-              <h2 className='employee-page__name mb30'>{employee.name}</h2>
-              <p className='employee-page__position text_size-20 mb10'>
-                <span className='text_bold'>Position: </span>
-                <span>{employee.position}</span>
-              </p>
-              <p className='employee-page__address text_size-20 mb10'>
-                <span className='text_bold'>Adress: </span>
-                <span>{employee.address}</span>
-              </p>
-              <div className='employee-page__comments'>
-                {showCommentForm ? (
-                  <AddCommentForm
-                    id={employee.id}
-                    showCommentsList={this.toggleBetweenFormAndList}
-                  />
-                ) : (
-                  this.renderCommentsList(employee)
-                )}
+      <div className='employee-page__wrapper'>
+        <div className='container'>
+          <StaffCaurusel />
+        </div>
+        <LoadingWrapper
+          loading={isLoadingEmployeeData}
+          hasError={hasError}
+          errorMessage={error.message}
+        >
+          <div className='employee-page flex fdc aic'>
+            <div className='employee-page__content box'>
+              <Link className='employee-page__link' to='/'>
+                &#x2715;
+              </Link>
+              <img
+                className='employee-page__image'
+                src={employee.photo}
+                alt={employee.name}
+              />
+              <div className='employee-page__description'>
+                <h2 className='employee-page__name mb30'>{employee.name}</h2>
+                <p className='employee-page__position text_size-20 mb10'>
+                  <span className='text_bold'>Position: </span>
+                  <span>{employee.position}</span>
+                </p>
+                <p className='employee-page__address text_size-20 mb10'>
+                  <span className='text_bold'>Adress: </span>
+                  <span>{employee.address}</span>
+                </p>
+                <div className='employee-page__comments'>
+                  {showCommentForm ? (
+                    <AddCommentForm
+                      id={employee.id}
+                      showCommentsList={this.toggleBetweenFormAndList}
+                    />
+                  ) : (
+                    this.renderCommentsList(employee)
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </LoadingWrapper>
+        </LoadingWrapper>
+      </div>
     );
   }
 }

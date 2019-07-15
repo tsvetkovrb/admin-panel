@@ -20,10 +20,11 @@ const initialState = {
   errors: {},
 };
 
-export const employee = (store = initialState, action) => {
+export const employee = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_EMPLOYEE_START:
       return {
+        ...state,
         isFetching: true,
         hasError: false,
         employee: {
@@ -33,6 +34,7 @@ export const employee = (store = initialState, action) => {
       };
     case FETCH_EMPLOYEE_SUCCESS:
       return {
+        ...state,
         isFetching: false,
         hasError: false,
         employee: action.payload,
@@ -40,6 +42,7 @@ export const employee = (store = initialState, action) => {
       };
     case FETCH_EMPLOYEE_FAIL:
       return {
+        ...state,
         isFetching: false,
         hasError: true,
         employee: {
@@ -50,6 +53,7 @@ export const employee = (store = initialState, action) => {
 
     case SEND_COMMENT_SUCCESS:
       return {
+        ...state,
         isFetching: false,
         hasError: false,
         employee: action.payload,
@@ -57,6 +61,6 @@ export const employee = (store = initialState, action) => {
       };
 
     default:
-      return store;
+      return state;
   }
 };

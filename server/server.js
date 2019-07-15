@@ -48,5 +48,20 @@ app.post(`${baseUrl}/add-comment/`, (req, res) => {
   res.send(employee);
 });
 
+app.post(`${baseUrl}/add-user/`, (req, res) => {
+  const nextId = employeesList[employeesList.length - 1].id + 1;
+
+  const employee = {
+    id: nextId,
+    ...req.body,
+    photo: `https://randomuser.me/api/portraits/women/${nextId}.jpg`,
+    comments: [],
+  };
+
+  employeesList.push(employee);
+
+  res.status(201).json(employeesList);
+});
+
 // eslint-disable-next-line
 app.listen(app.get('port'), () => console.log(`http://localhost:${app.get('port')}`),);

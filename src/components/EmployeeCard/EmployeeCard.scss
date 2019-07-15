@@ -1,4 +1,4 @@
-@import 'constants/colors.scss';
+@import "constants/colors.scss";
 
 .employee-card {
   width: 280px;
@@ -38,13 +38,11 @@
   }
 
   &__name {
-    margin: 0;
     font-size: 24px;
     margin-bottom: 20px;
   }
 
   &__position {
-    margin: 0;
     font-size: 14px;
     margin-bottom: 10px;
   }

@@ -36,41 +36,6 @@
       ]
     },
     {
-      "id": 1,
-      "name": "June Cha",
-      "email": "june.cha@gmail.com",
-      "position": "Sales",
-      "photo": "https://randomuser.me/api/portraits/women/44.jpg",
-      "address": "Missouri, Port Zane, 7717 Schimmel Prairie",
-      "comments": [
-        {
-          "title": "Title 1",
-          "comment": "Comment 1",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 1",
-          "comment": "Comment 1",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 1",
-          "comment": "Comment 1",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 1",
-          "comment": "Comment 1",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 1",
-          "comment": "Comment 1",
-          "phone": "9990841942"
-        }
-      ]
-    },
-    {
       "id": 2,
       "name": "Iida Niskanen",
       "email": "iida.niskanen@gmail.com",
@@ -141,41 +106,6 @@
       ]
     },
     {
-      "id": 4,
-      "name": "Jonathan Nu\u00f1ez",
-      "email": "jonathan.nu\u00f1ez@gmail.com",
-      "position": "Senior Developer",
-      "photo": "https://randomuser.me/api/portraits/men/43.jpg",
-      "address": "Minnesota, Fisherbury, 14865 Welch Parkway",
-      "comments": [
-        {
-          "title": "Title 4",
-          "comment": "Comment 4",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 4",
-          "comment": "Comment 4",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 4",
-          "comment": "Comment 4",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 4",
-          "comment": "Comment 4",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 4",
-          "comment": "Comment 4",
-          "phone": "9990841942"
-        }
-      ]
-    },
-    {
       "id": 5,
       "name": "Sasha Ho",
       "email": "sasha.ho@gmail.com",
@@ -241,41 +171,6 @@
         {
           "title": "Title 6",
           "comment": "Comment 6",
-          "phone": "9990841942"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Veeti Seppanen",
-      "email": "veeti.seppanen@gmail.com",
-      "position": "Manager",
-      "photo": "https://randomuser.me/api/portraits/men/97.jpg",
-      "address": "New Hampshire, Macychester, 616 Aileen Trail",
-      "comments": [
-        {
-          "title": "Title 7",
-          "comment": "Comment 7",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 7",
-          "comment": "Comment 7",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 7",
-          "comment": "Comment 7",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 7",
-          "comment": "Comment 7",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 7",
-          "comment": "Comment 7",
           "phone": "9990841942"
         }
       ]
@@ -556,76 +451,6 @@
         {
           "title": "Title 15",
           "comment": "Comment 15",
-          "phone": "9990841942"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "name": "\u0645\u0647\u0631\u0627\u062f \u06af\u0644\u0634\u0646",
-      "email": "\u0645\u0647\u0631\u0627\u062f.\u06af\u0644\u0634\u0646@gmail.com",
-      "position": "Senior Developer",
-      "photo": "https://randomuser.me/api/portraits/men/61.jpg",
-      "address": "Hawaii, North Glenna, 003 Boehm Rapids",
-      "comments": [
-        {
-          "title": "Title 16",
-          "comment": "Comment 16",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 16",
-          "comment": "Comment 16",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 16",
-          "comment": "Comment 16",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 16",
-          "comment": "Comment 16",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 16",
-          "comment": "Comment 16",
-          "phone": "9990841942"
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "name": "Leah Stevens",
-      "email": "leah.stevens@gmail.com",
-      "position": "Software Engineer",
-      "photo": "https://randomuser.me/api/portraits/women/47.jpg",
-      "address": "New Hampshire, Macychester, 616 Aileen Trail",
-      "comments": [
-        {
-          "title": "Title 17",
-          "comment": "Comment 17",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 17",
-          "comment": "Comment 17",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 17",
-          "comment": "Comment 17",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 17",
-          "comment": "Comment 17",
-          "phone": "9990841942"
-        },
-        {
-          "title": "Title 17",
-          "comment": "Comment 17",
           "phone": "9990841942"
         }
       ]

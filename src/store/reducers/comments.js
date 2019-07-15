@@ -10,10 +10,11 @@ const initialState = {
   errors: {},
 };
 
-export const comments = (store = initialState, action) => {
+export const comments = (state = initialState, action) => {
   switch (action.type) {
     case SEND_COMMENT_START:
       return {
+        ...state,
         isSending: true,
         hasError: false,
         errors: {},
@@ -21,6 +22,7 @@ export const comments = (store = initialState, action) => {
 
     case SEND_COMMENT_SUCCESS:
       return {
+        ...state,
         isSending: false,
         hasError: false,
         errors: {},
@@ -28,12 +30,13 @@ export const comments = (store = initialState, action) => {
 
     case SEND_COMMENT_FAIL:
       return {
+        ...state,
         isSending: false,
         hasError: true,
         errors: action.payload,
       };
 
     default:
-      return store;
+      return state;
   }
 };

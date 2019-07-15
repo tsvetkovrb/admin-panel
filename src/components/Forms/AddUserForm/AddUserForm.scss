@@ -1,0 +1,23 @@
+.add-user-form {
+  &__image {
+    width: 200px;
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    width: 50%;
+
+    &s {
+    }
+  }
+
+  &__link-back {
+    text-decoration: none;
+    width: 40%;
+    text-align: center;
+  }
+}

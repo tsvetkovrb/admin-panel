@@ -11,7 +11,7 @@ export const CommentsList = ({ comments = [] }) => {
     <div className='comments-list  mb20'>
       <h4 className='employee-page__comments-title mb10'>Comments: </h4>
       <div className='comments'>
-        {lastComments.map(comment => (
+        {lastComments.reverse().map(comment => (
           <Comment comment={comment} key={v4()} />
         ))}
       </div>

@@ -11,10 +11,11 @@ const initialState = {
   errors: {},
 };
 
-export const staffList = (store = initialState, action) => {
+export const staffList = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_STAFF_LIST_START:
       return {
+        ...state,
         isFetching: true,
         hasError: false,
         staffList: [],
@@ -22,6 +23,7 @@ export const staffList = (store = initialState, action) => {
       };
     case FETCH_STAFF_LIST_SUCCESS:
       return {
+        ...state,
         isFetching: false,
         hasError: false,
         staffList: action.payload,
@@ -29,6 +31,7 @@ export const staffList = (store = initialState, action) => {
       };
     case FETCH_STAFF_LIST_FAIL:
       return {
+        ...state,
         isFetching: false,
         hasError: true,
         staffList: [],
@@ -36,6 +39,6 @@ export const staffList = (store = initialState, action) => {
       };
 
     default:
-      return store;
+      return state;
   }
 };

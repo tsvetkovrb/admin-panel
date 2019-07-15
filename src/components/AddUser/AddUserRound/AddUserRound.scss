@@ -1,0 +1,14 @@
+.add-user-round {
+  position: relative;
+
+  background-color: #ddd;
+
+  &__image {
+    background: url("../../../static/add-user.svg") center no-repeat;
+    background-size: contain;
+
+    width: 50%;
+
+    opacity: 0.1;
+  }
+}

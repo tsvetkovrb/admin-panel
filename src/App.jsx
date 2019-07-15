@@ -8,6 +8,8 @@ import { StaffListPageContainer as StaffListPage } from 'containers/StaffListPag
 import { EmployeePageContainer as EmployeePage } from 'containers/EmployeePageContainer';
 
 import { NotFountPage } from 'pages/NotFountPage/NotFountPage';
+import { AddUserPage } from 'pages/AddUserPage/AddUserPage';
+
 import { ErrorScreen } from 'components/ErrorScreen/ErrorScreen';
 
 import './App.scss';
@@ -32,6 +34,7 @@ class App extends React.Component {
     return (
       <main className='main'>
         <Switch>
+          <Route path='/add' component={AddUserPage} />
           <Route exact path='/staff' component={StaffListPage} />
           <Route path='/staff/:id' component={EmployeePage} />
           <Redirect exact from='/' to='/staff' />
