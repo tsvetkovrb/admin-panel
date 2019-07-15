@@ -49,4 +49,4 @@ app.post(`${baseUrl}/add-comment/`, (req, res) => {
 });
 
 // eslint-disable-next-line
-app.listen(app.get('port'), () => console.log(`http://localhost:${app.get('port')}`));
+app.listen(app.get('port'), () => console.log(`http://localhost:${app.get('port')}`),);

@@ -8,7 +8,7 @@ const initialState = {
   isFetching: false,
   hasError: false,
   staffList: [],
-  errors: [],
+  errors: {},
 };
 
 export const staffList = (store = initialState, action) => {
@@ -18,14 +18,14 @@ export const staffList = (store = initialState, action) => {
         isFetching: true,
         hasError: false,
         staffList: [],
-        errors: [],
+        errors: {},
       };
     case FETCH_STAFF_LIST_SUCCESS:
       return {
         isFetching: false,
         hasError: false,
         staffList: action.payload,
-        errors: [],
+        errors: {},
       };
     case FETCH_STAFF_LIST_FAIL:
       return {

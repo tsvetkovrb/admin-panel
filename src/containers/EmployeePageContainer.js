@@ -1,17 +1,26 @@
 import { connect } from 'react-redux';
 import { fetchEmployee } from 'store/actions/fetchEmployee';
-import { sendComment } from 'store/actions/sendComment';
 
 import { EmployeePage } from 'pages/EmployeePage/EmployeePage';
 
-const mapState = ({ employee }) => ({
+const handlingError = (errorsComment, errorsEmployee) => {
+  if (errorsComment.message !== undefined) {
+    return errorsComment;
+  }
+  return errorsEmployee;
+};
+const hasError = (hasErrorEmployee, hasErrorComment) => hasErrorEmployee || hasErrorComment;
+
+const mapState = ({ employee, comments }) => ({
+  isLoadingEmployeeData: employee.isFetching,
   employee: employee.employee,
-  isLoading: employee.isFetching,
+  isSendingComment: comments.isSending,
+  hasError: hasError(employee.hasError, comments.hasError),
+  error: handlingError(comments.errors, employee.errors),
 });
 
 const mapDispatch = {
   fetchEmployee,
-  sendComment,
 };
 
 export const EmployeePageContainer = connect(

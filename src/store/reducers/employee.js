@@ -17,7 +17,7 @@ const initialState = {
     photo: '',
     position: '',
   },
-  errors: [],
+  errors: {},
 };
 
 export const employee = (store = initialState, action) => {
@@ -29,14 +29,14 @@ export const employee = (store = initialState, action) => {
         employee: {
           ...initialState.employee,
         },
-        errors: [],
+        errors: {},
       };
     case FETCH_EMPLOYEE_SUCCESS:
       return {
         isFetching: false,
         hasError: false,
         employee: action.payload,
-        errors: [],
+        errors: {},
       };
     case FETCH_EMPLOYEE_FAIL:
       return {
@@ -53,7 +53,7 @@ export const employee = (store = initialState, action) => {
         isFetching: false,
         hasError: false,
         employee: action.payload,
-        errors: [],
+        errors: {},
       };
 
     default:

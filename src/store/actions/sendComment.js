@@ -23,11 +23,9 @@ const sendCommentFail = payload => ({
 export const sendComment = data => async (dispatch) => {
   dispatch(sendCommentStart());
   try {
-    const response = await request.post('/add-comment/', data);
-    const { status, data: payload } = response;
-    if (status >= 200 && status <= 300) {
-      dispatch(sendCommentSuccess(payload));
-    }
+    const response = await request.post('add-comment/', data);
+    const { data: payload } = response;
+    dispatch(sendCommentSuccess(payload));
   } catch (error) {
     dispatch(sendCommentFail(error));
   }
