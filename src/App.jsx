@@ -8,10 +8,10 @@ import { Loader } from 'components/Loader/Loader';
 
 import './App.scss';
 
+const AddUserPage = React.lazy(() => import('pages/AddUserPage/AddUserPage'));
 const StaffListPage = React.lazy(() => import('containers/StaffListPageContainer'));
 const EmployeePage = React.lazy(() => import('containers/EmployeePageContainer'));
 const NotFountPage = React.lazy(() => import('pages/NotFountPage/NotFountPage'));
-const AddUserPage = React.lazy(() => import('pages/AddUserPage/AddUserPage'));
 
 class App extends React.Component {
   state = {
