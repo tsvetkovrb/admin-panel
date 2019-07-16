@@ -7,7 +7,11 @@ import './EmployeeCard.scss';
 export const EmployeeCard = ({ data }) => (
   <Link className='employee-card box' to={`/staff/${data.id}`}>
     <div className='employee-card__image'>
-      <img className='employee-card__profile-photo' src={data.photo} alt={data.name} />
+      <img
+        className='employee-card__profile-photo'
+        src={data.photo}
+        alt={data.name}
+      />
     </div>
     <div className='employee-card__description'>
       <h3 className='employee-card__name'>

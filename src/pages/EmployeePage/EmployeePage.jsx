@@ -72,46 +72,46 @@ export class EmployeePage extends React.Component {
       <div className='employee-page__wrapper'>
         <div className='container'>
           <StaffCaurusel />
-        </div>
-        <LoadingWrapper
-          loading={isLoadingEmployeeData}
-          hasError={hasError}
-          errorMessage={error.message}
-        >
-          <div className='employee-page flex fdc aic'>
-            <div className='employee-page__content box'>
-              <Link className='employee-page__link' to='/'>
-                &#x2715;
-              </Link>
-              <img
-                className='employee-page__image'
-                src={employee.photo}
-                alt={employee.name}
-              />
-              <div className='employee-page__description'>
-                <h2 className='employee-page__name mb30'>{employee.name}</h2>
-                <p className='employee-page__position text_size-20 mb10'>
-                  <span className='text_bold'>Position: </span>
-                  <span>{employee.position}</span>
-                </p>
-                <p className='employee-page__address text_size-20 mb10'>
-                  <span className='text_bold'>Adress: </span>
-                  <span>{employee.address}</span>
-                </p>
-                <div className='employee-page__comments'>
-                  {showCommentForm ? (
-                    <AddCommentForm
-                      id={employee.id}
-                      showCommentsList={this.toggleBetweenFormAndList}
-                    />
-                  ) : (
-                    this.renderCommentsList(employee)
-                  )}
+          <LoadingWrapper
+            loading={isLoadingEmployeeData}
+            hasError={hasError}
+            errorMessage={error.message}
+          >
+            <div className='employee-page flex fdc aic'>
+              <div className='employee-page__content box'>
+                <Link className='employee-page__link' to='/'>
+                  &#x2715;
+                </Link>
+                <img
+                  className='employee-page__image'
+                  src={employee.photo}
+                  alt={employee.name}
+                />
+                <div className='employee-page__description'>
+                  <h2 className='employee-page__name mb30'>{employee.name}</h2>
+                  <p className='employee-page__position text_size-20 mb10'>
+                    <span className='text_bold'>Position: </span>
+                    <span>{employee.position}</span>
+                  </p>
+                  <p className='employee-page__address text_size-20 mb10'>
+                    <span className='text_bold'>Adress: </span>
+                    <span>{employee.address}</span>
+                  </p>
+                  <div className='employee-page__comments'>
+                    {showCommentForm ? (
+                      <AddCommentForm
+                        id={employee.id}
+                        showCommentsList={this.toggleBetweenFormAndList}
+                      />
+                    ) : (
+                      this.renderCommentsList(employee)
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </LoadingWrapper>
+          </LoadingWrapper>
+        </div>
       </div>
     );
   }

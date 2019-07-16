@@ -4,9 +4,8 @@ import * as Yup from 'yup';
 import { Formik, Form } from 'formik';
 
 import { FormikInput } from 'components/FormikInput/FormikInput';
+import { LoadingWrapper } from 'components/LoadingWrapper/LoadingWrapper';
 import { Button } from 'components/Button/Button';
-
-import { request } from 'api/client';
 
 import addUserIcon from 'static/add-user.svg';
 
@@ -22,62 +21,75 @@ const AddUserSchema = Yup.object().shape({
   address: Yup.string().required('Address is requred'),
 });
 
-export const AddUserPageForm = ({ goBack }) => (
-  <Formik
-    initialValues={{
-      firstName: '',
-      lastName: '',
-      email: '',
-      position: '',
-      address: '',
-    }}
-    validationSchema={AddUserSchema}
-    onSubmit={(values, { resetForm }) => {
-      const user = {
-        name: `${values.firstName} ${values.lastName}`,
-        email: values.email,
-        position: values.position,
-        address: values.address,
-        comments: [],
-      };
-
-      request.post('add-user/', user).then(response => console.log(response));
-      resetForm();
-    }}
+export const AddUserForm = ({
+  goBack,
+  addEmployee,
+  isSending,
+  hasError,
+  errors,
+}) => (
+  <LoadingWrapper
+    loading={isSending}
+    hasError={hasError}
+    errorMessage={errors.message}
   >
-    {({ isValid }) => (
-      <Form className='add-user-form'>
-        <div className='add-user-form__image-wrapper mb40'>
-          <img
-            className='add-user-form__image'
-            src={addUserIcon}
-            alt='Add user icon'
-          />
-        </div>
-        <div className='add-user-form__inputs mb40'>
-          <FormikInput name='firstName' placeholder='First name' />
-          <FormikInput name='lastName' placeholder='Last name' />
-          <FormikInput name='email' placeholder='Email' />
-          <FormikInput name='position' placeholder='Position' />
-          <FormikInput name='address' placeholder='Address' />
-        </div>
-        <div className='add-user-form__buttons flex jcsb'>
-          <button
-            type='button'
-            onClick={goBack}
-            className='button add-user-form__link-back'
-          >
-            Back
-          </button>
-          <Button
-            type='submit'
-            className='add-user-form__button'
-            disabled={!isValid}
-          >
-            Add User
-          </Button>
-        </div>
-      </Form>
-    )}
-  </Formik>
+    <Formik
+      initialValues={{
+        firstName: '',
+        lastName: '',
+        email: '',
+        position: '',
+        address: '',
+      }}
+      validationSchema={AddUserSchema}
+      onSubmit={({
+        firstName, lastName, email, position, address,
+      }) => {
+        const employee = {
+          name: `${firstName} ${lastName}`,
+          email,
+          position,
+          address,
+          comments: [],
+        };
+
+        addEmployee(employee);
+      }}
+    >
+      {({ isValid }) => (
+        <Form className='add-user-form'>
+          <div className='add-user-form__image-wrapper mb40'>
+            <img
+              className='add-user-form__image'
+              src={addUserIcon}
+              alt='Add user icon'
+            />
+          </div>
+          <div className='add-user-form__inputs mb40'>
+            <FormikInput name='firstName' placeholder='First name' />
+            <FormikInput name='lastName' placeholder='Last name' />
+            <FormikInput name='email' placeholder='Email' />
+            <FormikInput name='position' placeholder='Position' />
+            <FormikInput name='address' placeholder='Address' />
+          </div>
+          <div className='add-user-form__buttons flex jcsb'>
+            <button
+              type='button'
+              onClick={goBack}
+              className='button add-user-form__link-back'
+            >
+              Back
+            </button>
+            <Button
+              type='submit'
+              className='add-user-form__button'
+              disabled={!isValid}
+            >
+              Add User
+            </Button>
+          </div>
+        </Form>
+      )}
+    </Formik>
+  </LoadingWrapper>
 );

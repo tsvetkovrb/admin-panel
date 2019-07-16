@@ -1,4 +1,4 @@
-@import 'constants/colors.scss';
+@import "constants/colors.scss";
 
 .button {
   display: inline-block;
@@ -20,6 +20,8 @@
   color: #fff;
 
   font-size: 16px;
+
+  text-transform: uppercase;
 
   &:disabled {
     opacity: 0.3;

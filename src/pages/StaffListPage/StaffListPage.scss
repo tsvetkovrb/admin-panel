@@ -2,7 +2,9 @@
   padding: 50px 0;
 
   &__title {
-    font-size: 50px;
+    font-size: 80px;
+    text-align: center;
+    text-transform: uppercase;
     margin: 0;
     margin-bottom: 40px;
   }
@@ -14,7 +16,7 @@
     justify-content: space-between;
 
     &::after {
-      content: '';
+      content: "";
       flex: auto;
     }
   }

@@ -2,6 +2,7 @@ import {
   FETCH_STAFF_LIST_START,
   FETCH_STAFF_LIST_SUCCESS,
   FETCH_STAFF_LIST_FAIL,
+  ADD_USER_SUCCESS,
 } from '../actionTypes';
 
 const initialState = {
@@ -36,6 +37,11 @@ export const staffList = (state = initialState, action) => {
         hasError: true,
         staffList: [],
         errors: action.payload,
+      };
+    case ADD_USER_SUCCESS:
+      return {
+        ...state,
+        staffList: action.payload,
       };
 
     default:

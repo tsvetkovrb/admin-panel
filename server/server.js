@@ -51,10 +51,14 @@ app.post(`${baseUrl}/add-comment/`, (req, res) => {
 app.post(`${baseUrl}/add-user/`, (req, res) => {
   const nextId = employeesList[employeesList.length - 1].id + 1;
 
+  const randomBooleanValue = !!Math.round(Math.random());
+
+  const womenOrMen = randomBooleanValue ? 'women' : 'men';
+
   const employee = {
     id: nextId,
     ...req.body,
-    photo: `https://randomuser.me/api/portraits/women/${nextId}.jpg`,
+    photo: `https://randomuser.me/api/portraits/${womenOrMen}/${nextId}.jpg`,
     comments: [],
   };
 
