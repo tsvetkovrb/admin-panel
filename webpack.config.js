@@ -3,7 +3,7 @@ const WebpackMessages = require('webpack-messages');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: ['babel-polyfill', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
@@ -80,7 +80,7 @@ module.exports = {
     new WebpackMessages({
       name: 'client',
       // eslint-disable-next-line
-      logger: str => console.log(`>> ${str}`)
+      logger: str => console.log(`>> ${str}`),
     }),
   ],
   resolve: {
