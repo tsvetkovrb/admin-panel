@@ -3,15 +3,15 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { StaffListPageContainer as StaffListPage } from 'containers/StaffListPageContainer';
-import { EmployeePageContainer as EmployeePage } from 'containers/EmployeePageContainer';
-
-import { NotFountPage } from 'pages/NotFountPage/NotFountPage';
-import { AddUserPage } from 'pages/AddUserPage/AddUserPage';
-
 import { ErrorScreen } from 'components/ErrorScreen/ErrorScreen';
+import { Loader } from 'components/Loader/Loader';
 
 import './App.scss';
+
+const StaffListPage = React.lazy(() => import('containers/StaffListPageContainer'));
+const EmployeePage = React.lazy(() => import('containers/EmployeePageContainer'));
+const NotFountPage = React.lazy(() => import('pages/NotFountPage/NotFountPage'));
+const AddUserPage = React.lazy(() => import('pages/AddUserPage/AddUserPage'));
 
 class App extends React.Component {
   state = {
@@ -32,13 +32,15 @@ class App extends React.Component {
 
     return (
       <main className='main'>
-        <Switch>
-          <Route path='/add' component={AddUserPage} />
-          <Route exact path='/staff' component={StaffListPage} />
-          <Route path='/staff/:id' component={EmployeePage} />
-          <Redirect exact from='/' to='/staff' />
-          <Route component={NotFountPage} />
-        </Switch>
+        <React.Suspense fallback={<Loader />}>
+          <Switch>
+            <Route path='/add' component={AddUserPage} />
+            <Route exact path='/staff' component={StaffListPage} />
+            <Route path='/staff/:id' component={EmployeePage} />
+            <Redirect exact from='/' to='/staff' />
+            <Route component={NotFountPage} />
+          </Switch>
+        </React.Suspense>
       </main>
     );
   }

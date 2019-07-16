@@ -23,7 +23,7 @@ const mapDispatch = {
   fetchEmployee,
 };
 
-export const EmployeePageContainer = connect(
+export default connect(
   mapState,
   mapDispatch,
 )(EmployeePage);

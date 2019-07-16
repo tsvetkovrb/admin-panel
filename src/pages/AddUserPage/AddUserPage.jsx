@@ -3,7 +3,7 @@ import { AddUserFormContainer as AddUserPageForm } from 'containers/AddUserFormC
 
 import './AddUserPage.scss';
 
-export const AddUserPage = ({
+const AddUserPage = ({
   history, hasError, errors, isSending,
 }) => (
   <div className='add-user-page'>
@@ -20,3 +20,5 @@ export const AddUserPage = ({
     </div>
   </div>
 );
+
+export default AddUserPage;

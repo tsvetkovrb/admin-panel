@@ -14,7 +14,7 @@ const mapDispatch = {
   fetchStaffList,
 };
 
-export const StaffListPageContainer = connect(
+export default connect(
   mapState,
   mapDispatch,
 )(StaffListPage);

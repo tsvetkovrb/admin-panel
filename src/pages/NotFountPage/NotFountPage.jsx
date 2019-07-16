@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NotFountPage.scss';
 
-export const NotFountPage = () => (
+const NotFountPage = () => (
   <div className='not-found-page flex jcc aic fdc'>
     <h1 className='not-found-page__title'>
       <span>Oooops</span>
@@ -10,3 +10,5 @@ export const NotFountPage = () => (
     </h1>
   </div>
 );
+
+export default NotFountPage;
