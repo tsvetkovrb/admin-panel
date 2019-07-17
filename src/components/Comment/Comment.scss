@@ -5,22 +5,34 @@
 
   border-radius: 5px;
 
+  border-bottom-right-radius: 0;
+
   width: 590px;
 
   &::after {
     content: "";
     position: absolute;
 
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: -14px;
+    top: 24px;
 
     width: 0;
     height: 0;
 
-    border-bottom: 8px solid transparent;
-    border-top: 8px solid transparent;
-    border-left: 10px solid #eee;
+    border-bottom: 15px solid #eee;
+    border-right: 15px solid transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: -36px;
+    top: 0;
+    background-color: #fff;
+    width: 36px;
+    height: 39px;
+    border-radius: 35%;
   }
 
   &:not(:last-child) {

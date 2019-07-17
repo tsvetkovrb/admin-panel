@@ -65,6 +65,6 @@
 
 ![](https://res.cloudinary.com/dhm8ahak6/image/upload/v1563265128/Screenshot_2019-07-16_at_18.17.59_rhsx7i.png)
 
-![](https://res.cloudinary.com/dhm8ahak6/image/upload/v1563265324/Screenshot_2019-07-16_at_18.20.24_dsuxo4.png)
+![](https://res.cloudinary.com/dhm8ahak6/image/upload/v1563365062/Screenshot_2019-07-17_at_22.03.31_gjoms7.png)
 
 ![](https://res.cloudinary.com/dhm8ahak6/image/upload/v1563265371/Screenshot_2019-07-16_at_18.22.42_dian1d.png)
