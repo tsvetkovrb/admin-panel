@@ -1,6 +1,6 @@
-# Future Comes
+# Staff List
 
-- [Demo](https://modest-babbage-7afaf4.netlify.com/)
+- [Demo](http://staff-list.herokuapp.com)
 
 ## Оглавление:
 
@@ -37,19 +37,19 @@
 #### Перед запуском установите зависимости командой
 
 ```
-  yarn
+  yarn install или npm install
 ```
 
 #### Для запуска приложения используйте команду
 
 ```
-  yarn dev
+  yarn dev или npm run dev
 ```
 
 #### Для продакшн сборки используйте
 
 ```
-  yarn build
+  yarn build или npm run build
 ```
 
 ### Полезные ссылки

@@ -11,7 +11,7 @@ module.exports = (_, argv) => {
     entry: ['babel-polyfill', './src/index.jsx'],
     output: {
       path: path.resolve(__dirname, 'build'),
-      filename: '[name].js',
+      filename: '[name].[hash].js',
       publicPath: '/',
     },
     stats: 'minimal',
@@ -91,7 +91,9 @@ module.exports = (_, argv) => {
       }),
       new MiniCssExtractPlugin({
         filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-        chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+        chunkFilename: isDevelopment
+          ? 'chunk.[id].css'
+          : 'chunk.[id][hash].css',
       }),
     ],
     resolve: {
