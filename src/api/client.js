@@ -6,5 +6,5 @@ const VERSIONS = {
 
 export const request = axios.create({
   validateStatus: status => status >= 200 && status < 400,
-  baseURL: `https://quiet-bayou-37772.herokuapp.com/api/${VERSIONS.V1}/`,
+  baseURL: `https://staff-list-api.herokuapp.com/api/${VERSIONS.V1}/`,
 });

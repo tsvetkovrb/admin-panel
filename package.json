@@ -64,7 +64,6 @@
   },
   "scripts": {
     "dev:client": "webpack-dev-server --mode development",
-    "dev:server": "nodemon server/server.js",
     "build": "webpack --mode production",
     "dev": "npm-run-all --parallel dev:*",
     "start": "node server/server.js"
