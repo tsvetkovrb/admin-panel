@@ -5,39 +5,42 @@ import configureMockStore from 'redux-mock-store';
 import { request } from 'api/client';
 
 import {
-  addUserStart, addUserSuccess, addUserFail, addUser,
-} from '../addUser';
+  fetchEmployeeStart,
+  fetchEmployeeSuccess,
+  fetchEmployeeFail,
+  fetchEmployee,
+} from '../fetchEmployee';
 import * as T from '../../actionTypes';
 
 const mockStore = configureMockStore([thunk]);
 
 describe('Add user actions', () => {
-  test('should return an object with type ADD_USER_START', () => {
-    expect(addUserStart()).toEqual({
-      type: T.ADD_USER_START,
+  test('should return an object with type FETCH_EMPLOYEE_START', () => {
+    expect(fetchEmployeeStart()).toEqual({
+      type: T.FETCH_EMPLOYEE_START,
     });
   });
 
-  test('should return an object with type ADD_USER_SUCCESS and payload', () => {
+  test('should return an object with type FETCH_EMPLOYEE_SUCCESS and payload', () => {
     const payload = 'payload';
 
-    expect(addUserSuccess(payload)).toEqual({
-      type: T.ADD_USER_SUCCESS,
+    expect(fetchEmployeeSuccess(payload)).toEqual({
+      type: T.FETCH_EMPLOYEE_SUCCESS,
       payload,
     });
   });
 
-  test('should return an object with type ADD_USER_FAIL and payload', () => {
+  test('should return an object with type FETCH_EMPLOYEE_FAIL and payload', () => {
     const payload = 'payload';
 
-    expect(addUserFail(payload)).toEqual({
-      type: T.ADD_USER_FAIL,
+    expect(fetchEmployeeFail(payload)).toEqual({
+      type: T.FETCH_EMPLOYEE_FAIL,
       payload,
     });
   });
 });
 
-describe('Async adding user to server', () => {
+describe('Async fetching current employee from server', () => {
   beforeEach(() => {
     moxios.install(request);
   });
@@ -52,10 +55,13 @@ describe('Async adding user to server', () => {
       moxiosRequest.respondWith({ response: { data: 'data' }, status: 200 });
     });
 
-    const expectedActions = [addUserStart(), addUserSuccess({ data: 'data' })];
+    const expectedActions = [
+      fetchEmployeeStart(),
+      fetchEmployeeSuccess({ data: 'data' }),
+    ];
     const store = mockStore({});
 
-    return store.dispatch(addUser()).then(() => {
+    return store.dispatch(fetchEmployee()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -70,10 +76,10 @@ describe('Async adding user to server', () => {
       moxiosRequest.reject(errResp);
     });
 
-    const expectedActions = [addUserStart(), addUserFail(errResp)];
+    const expectedActions = [fetchEmployeeStart(), fetchEmployeeFail(errResp)];
     const store = mockStore({});
 
-    return store.dispatch(addUser()).then(() => {
+    return store.dispatch(fetchEmployee()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

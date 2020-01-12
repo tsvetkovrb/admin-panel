@@ -4,7 +4,7 @@ import {
   FETCH_STAFF_LIST_FAIL,
 } from '../actionTypes';
 
-const fetchStaffListStart = () => ({
+export const fetchStaffListStart = () => ({
   type: FETCH_STAFF_LIST_START,
 });
 

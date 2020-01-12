@@ -6,16 +6,16 @@ import {
   FETCH_EMPLOYEE_FAIL,
 } from '../actionTypes';
 
-const fetchEmployeeStart = () => ({
+export const fetchEmployeeStart = () => ({
   type: FETCH_EMPLOYEE_START,
 });
 
-const fetchEmployeeSuccess = payload => ({
+export const fetchEmployeeSuccess = payload => ({
   type: FETCH_EMPLOYEE_SUCCESS,
   payload,
 });
 
-const fetchEmployeeFail = payload => ({
+export const fetchEmployeeFail = payload => ({
   type: FETCH_EMPLOYEE_FAIL,
   payload,
 });

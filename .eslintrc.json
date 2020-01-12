@@ -33,6 +33,7 @@
     "no-debugger": 2,
     "no-empty": 1,
     "react/no-did-update-set-state": "off",
+    "arrow-parens": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {

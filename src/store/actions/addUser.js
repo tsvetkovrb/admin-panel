@@ -20,7 +20,7 @@ export const addUserFail = payload => ({
   payload,
 });
 
-export const addUser = data => async (dispatch) => {
+export const addUser = data => async dispatch => {
   dispatch(addUserStart());
   try {
     const response = await request.post('add-user/', data);

@@ -6,16 +6,16 @@ import {
   SEND_COMMENT_FAIL,
 } from '../actionTypes';
 
-const sendCommentStart = () => ({
+export const sendCommentStart = () => ({
   type: SEND_COMMENT_START,
 });
 
-const sendCommentSuccess = payload => ({
+export const sendCommentSuccess = payload => ({
   type: SEND_COMMENT_SUCCESS,
   payload,
 });
 
-const sendCommentFail = payload => ({
+export const sendCommentFail = payload => ({
   type: SEND_COMMENT_FAIL,
   payload,
 });

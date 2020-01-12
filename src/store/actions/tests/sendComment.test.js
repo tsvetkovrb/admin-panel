@@ -5,39 +5,43 @@ import configureMockStore from 'redux-mock-store';
 import { request } from 'api/client';
 
 import {
-  addUserStart, addUserSuccess, addUserFail, addUser,
-} from '../addUser';
+  sendCommentStart,
+  sendCommentSuccess,
+  sendCommentFail,
+  sendComment,
+} from '../sendComment';
+
 import * as T from '../../actionTypes';
 
 const mockStore = configureMockStore([thunk]);
 
 describe('Add user actions', () => {
-  test('should return an object with type ADD_USER_START', () => {
-    expect(addUserStart()).toEqual({
-      type: T.ADD_USER_START,
+  test('should return an object with type SEND_COMMENT_START', () => {
+    expect(sendCommentStart()).toEqual({
+      type: T.SEND_COMMENT_START,
     });
   });
 
-  test('should return an object with type ADD_USER_SUCCESS and payload', () => {
+  test('should return an object with type SEND_COMMENT_SUCCESS and payload', () => {
     const payload = 'payload';
 
-    expect(addUserSuccess(payload)).toEqual({
-      type: T.ADD_USER_SUCCESS,
+    expect(sendCommentSuccess(payload)).toEqual({
+      type: T.SEND_COMMENT_SUCCESS,
       payload,
     });
   });
 
-  test('should return an object with type ADD_USER_FAIL and payload', () => {
+  test('should return an object with type SEND_COMMENT_FAIL and payload', () => {
     const payload = 'payload';
 
-    expect(addUserFail(payload)).toEqual({
-      type: T.ADD_USER_FAIL,
+    expect(sendCommentFail(payload)).toEqual({
+      type: T.SEND_COMMENT_FAIL,
       payload,
     });
   });
 });
 
-describe('Async adding user to server', () => {
+describe('Async sending comment to employee', () => {
   beforeEach(() => {
     moxios.install(request);
   });
@@ -52,10 +56,10 @@ describe('Async adding user to server', () => {
       moxiosRequest.respondWith({ response: { data: 'data' }, status: 200 });
     });
 
-    const expectedActions = [addUserStart(), addUserSuccess({ data: 'data' })];
+    const expectedActions = [sendCommentStart(), sendCommentSuccess({ data: 'data' })];
     const store = mockStore({});
 
-    return store.dispatch(addUser()).then(() => {
+    return store.dispatch(sendComment()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -70,10 +74,10 @@ describe('Async adding user to server', () => {
       moxiosRequest.reject(errResp);
     });
 
-    const expectedActions = [addUserStart(), addUserFail(errResp)];
+    const expectedActions = [sendCommentStart(), sendCommentFail(errResp)];
     const store = mockStore({});
 
-    return store.dispatch(addUser()).then(() => {
+    return store.dispatch(sendComment()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
