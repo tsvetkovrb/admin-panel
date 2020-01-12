@@ -6,16 +6,16 @@ import {
   ADD_USER_FAIL,
 } from '../actionTypes';
 
-const addUserStart = () => ({
+export const addUserStart = () => ({
   type: ADD_USER_START,
 });
 
-const addUserSuccess = payload => ({
+export const addUserSuccess = payload => ({
   type: ADD_USER_SUCCESS,
   payload,
 });
 
-const addUserFail = payload => ({
+export const addUserFail = payload => ({
   type: ADD_USER_FAIL,
   payload,
 });

@@ -3,6 +3,7 @@
   "plugins": [
     "react-hot-loader/babel",
     "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-throw-expressions"
+    "@babel/plugin-proposal-throw-expressions",
+    "@babel/plugin-transform-runtime"
   ]
 }
