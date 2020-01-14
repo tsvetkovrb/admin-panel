@@ -5,7 +5,7 @@ import {
   ADD_USER_SUCCESS,
 } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   hasError: false,
   staffList: [],

@@ -5,7 +5,7 @@ import {
   SEND_COMMENT_SUCCESS,
 } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   hasError: false,
   employee: {

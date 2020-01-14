@@ -4,7 +4,7 @@ import {
   ADD_USER_FAIL,
 } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   isSending: false,
   hasError: false,
   errors: {},

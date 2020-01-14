@@ -4,7 +4,7 @@ import {
   SEND_COMMENT_FAIL,
 } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   isSending: false,
   hasError: false,
   errors: {},
