@@ -4,9 +4,7 @@ import configureMockStore from 'redux-mock-store';
 
 import { request } from 'api/client';
 
-import {
-  addUserStart, addUserSuccess, addUserFail, addUser,
-} from '../addUser';
+import { addUserStart, addUserSuccess, addUserFail, addUser } from '../addUser';
 import * as T from '../../actionTypes';
 
 const mockStore = configureMockStore([thunk]);

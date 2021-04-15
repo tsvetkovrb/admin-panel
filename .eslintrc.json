@@ -1,46 +1,47 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "extends": ["airbnb"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react"],
   "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
+    "react": {
+      "version": "detect"
     }
   },
-  "parser": "babel-eslint",
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "airbnb-typescript"
+  ],
   "rules": {
-    "jsx-quotes": [1, "prefer-single"],
-    "import/prefer-default-export": "off",
-    "react/prop-types": 0,
-    "no-console": 1,
-    "no-debugger": 2,
-    "no-empty": 1,
-    "react/no-did-update-set-state": "off",
-    "arrow-parens": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error"
     ],
-    "consistent-return": "off",
-    "no-useless-escape": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "object-curly-newline": "off",
+    "no-case-declarations": "off",
+    "function-paren-newline": "off",
+    "prefer-arrow-callback": "off",
+    "@typescript-eslint/indent": "off",
+    "react/button-has-type": "off"
   }
 }

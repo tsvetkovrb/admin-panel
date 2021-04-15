@@ -10,17 +10,17 @@ export const fetchEmployeeStart = () => ({
   type: FETCH_EMPLOYEE_START,
 });
 
-export const fetchEmployeeSuccess = payload => ({
+export const fetchEmployeeSuccess = (payload) => ({
   type: FETCH_EMPLOYEE_SUCCESS,
   payload,
 });
 
-export const fetchEmployeeFail = payload => ({
+export const fetchEmployeeFail = (payload) => ({
   type: FETCH_EMPLOYEE_FAIL,
   payload,
 });
 
-export const fetchEmployee = id => async (dispatch) => {
+export const fetchEmployee = (id) => async (dispatch) => {
   dispatch(fetchEmployeeStart());
   try {
     const response = await request.get(`staff-list/${id}`);

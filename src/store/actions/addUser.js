@@ -10,17 +10,17 @@ export const addUserStart = () => ({
   type: ADD_USER_START,
 });
 
-export const addUserSuccess = payload => ({
+export const addUserSuccess = (payload) => ({
   type: ADD_USER_SUCCESS,
   payload,
 });
 
-export const addUserFail = payload => ({
+export const addUserFail = (payload) => ({
   type: ADD_USER_FAIL,
   payload,
 });
 
-export const addUser = data => async dispatch => {
+export const addUser = (data) => async (dispatch) => {
   dispatch(addUserStart());
   try {
     const response = await request.post('add-user/', data);

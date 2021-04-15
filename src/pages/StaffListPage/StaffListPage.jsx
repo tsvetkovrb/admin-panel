@@ -3,7 +3,7 @@ import React from 'react';
 import { EmployeeCard } from 'components/EmployeeCard/EmployeeCard';
 
 import { LoadingWrapper } from 'components/LoadingWrapper/LoadingWrapper';
-import { AddUserCard } from 'components/AddUser/AddUserCard/AddUserCard';
+import { AddUserCard } from 'components/AddUser/AddUserCard';
 
 import './StaffListPage.scss';
 
@@ -15,14 +15,13 @@ export class StaffListPage extends React.Component {
     }
   }
 
-  renderStaffList = staffList => staffList.map(employee => (
-    <EmployeeCard key={employee.id} data={employee} />
-  ));
+  renderStaffList = (staffList) =>
+    staffList.map((employee) => (
+      <EmployeeCard key={employee.id} data={employee} />
+    ));
 
   render() {
-    const {
-      staffList, isFetching, hasError, errors,
-    } = this.props;
+    const { staffList, isFetching, hasError, errors } = this.props;
 
     return (
       <LoadingWrapper
@@ -30,10 +29,10 @@ export class StaffListPage extends React.Component {
         hasError={hasError}
         errorMessage={errors.message}
       >
-        <div className='staff-list flex fdc'>
-          <div className='container'>
-            <h1 className='staff-list__title'>Staff List:</h1>
-            <div className='staff-list__content'>
+        <div className="staff-list flex fdc">
+          <div className="container">
+            <h1 className="staff-list__title">Staff List:</h1>
+            <div className="staff-list__content">
               {this.renderStaffList(staffList)}
               <AddUserCard />
             </div>

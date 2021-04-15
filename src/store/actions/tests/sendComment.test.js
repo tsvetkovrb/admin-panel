@@ -56,7 +56,10 @@ describe('Async sending comment to employee', () => {
       moxiosRequest.respondWith({ response: { data: 'data' }, status: 200 });
     });
 
-    const expectedActions = [sendCommentStart(), sendCommentSuccess({ data: 'data' })];
+    const expectedActions = [
+      sendCommentStart(),
+      sendCommentSuccess({ data: 'data' }),
+    ];
     const store = mockStore({});
 
     return store.dispatch(sendComment()).then(() => {

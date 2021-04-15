@@ -5,13 +5,12 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { ErrorScreen } from 'components/ErrorScreen/ErrorScreen';
 import { Loader } from 'components/Loader/Loader';
-
+import {
+  StaffListPageContainer as StaffListPage,
+  EmployeePageContainer as EmployeePage,
+} from 'containers';
 import './App.scss';
-
-const AddUserPage = React.lazy(() => import('pages/AddUserPage/AddUserPage'));
-const StaffListPage = React.lazy(() => import('containers/StaffListPageContainer'));
-const EmployeePage = React.lazy(() => import('containers/EmployeePageContainer'));
-const NotFountPage = React.lazy(() => import('pages/NotFountPage/NotFountPage'));
+import { NotFountPage, AddUserPage } from 'pages';
 
 class App extends React.Component {
   state = {
@@ -31,13 +30,13 @@ class App extends React.Component {
     }
 
     return (
-      <main className='main'>
+      <main className="main">
         <React.Suspense fallback={<Loader />}>
           <Switch>
-            <Route path='/add' component={AddUserPage} />
-            <Route exact path='/staff' component={StaffListPage} />
-            <Route path='/staff/:id' component={EmployeePage} />
-            <Redirect exact from='/' to='/staff' />
+            <Route path="/add" component={AddUserPage} />
+            <Route exact path="/staff" component={StaffListPage} />
+            <Route path="/staff/:id" component={EmployeePage} />
+            <Redirect exact from="/" to="/staff" />
             <Route component={NotFountPage} />
           </Switch>
         </React.Suspense>

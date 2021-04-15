@@ -9,7 +9,9 @@ const handlingError = (errorsComment, errorsEmployee) => {
   }
   return errorsEmployee;
 };
-const hasError = (hasErrorEmployee, hasErrorComment) => hasErrorEmployee || hasErrorComment;
+
+const hasError = (hasErrorEmployee, hasErrorComment) =>
+  hasErrorEmployee || hasErrorComment;
 
 const mapState = ({ employee, comments }) => ({
   isLoadingEmployeeData: employee.isFetching,
@@ -23,7 +25,7 @@ const mapDispatch = {
   fetchEmployee,
 };
 
-export default connect(
+export const EmployeePageContainer = connect(
   mapState,
   mapDispatch,
 )(EmployeePage);
