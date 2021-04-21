@@ -3,8 +3,8 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { ErrorScreen } from 'components/ErrorScreen/ErrorScreen';
-import { Loader } from 'components/Loader/Loader';
+import { ErrorScreen } from 'components/ErrorScreen';
+import { Loader } from 'components/Loader';
 import {
   StaffListPageContainer as StaffListPage,
   EmployeePageContainer as EmployeePage,
@@ -12,13 +12,18 @@ import {
 import './App.scss';
 import { NotFountPage, AddUserPage } from 'pages';
 
-class App extends React.Component {
-  state = {
+type State = {
+  hasError: boolean;
+  errorInfo: { message?: string };
+};
+
+class App extends React.Component<Record<string, unknown>, State> {
+  state: State = {
     hasError: false,
     errorInfo: {},
   };
 
-  componentDidCatch(error) {
+  componentDidCatch(error: { message?: string }) {
     this.setState({ hasError: true, errorInfo: error });
   }
 

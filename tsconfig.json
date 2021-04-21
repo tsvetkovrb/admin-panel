@@ -1,5 +1,6 @@
 {
   "compileOnSave": true,
+
   "compilerOptions": {
     "strict": true,
     "target": "es5",
@@ -12,10 +13,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "noImplicitAny": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

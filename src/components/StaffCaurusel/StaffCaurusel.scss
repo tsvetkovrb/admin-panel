@@ -1,4 +1,4 @@
-@import "constants/colors.scss";
+@import 'constants/colors.scss';
 
 .caurusel {
   * {
@@ -51,10 +51,10 @@
         &::before {
           position: absolute;
           left: -15px;
-          content: "";
+          content: '';
           width: 20px;
           height: 20px;
-          background: url("../../static/left-arrow.svg") center no-repeat;
+          background: url('../../static/left-arrow.svg') center no-repeat;
           background-size: contain;
         }
       }
@@ -63,10 +63,10 @@
         &::before {
           position: absolute;
           right: -15px;
-          content: "";
+          content: '';
           width: 20px;
           height: 20px;
-          background: url("../../static/right-arrow.svg") center no-repeat;
+          background: url('../../static/right-arrow.svg') center no-repeat;
           background-size: contain;
         }
       }
@@ -76,7 +76,7 @@
   &-dots {
     & > li > button {
       &::before {
-        content: "";
+        content: '';
         width: 5px;
         height: 5px;
         border-radius: 50%;

@@ -10,8 +10,14 @@ import './slick-theme.min.css';
 import './slick.min.css';
 
 import './StaffCaurusel.scss';
+import { Person } from 'components/EmployeeCard/EmployeeCard';
 
-export class StaffCaurusel extends React.Component {
+type Props = {
+  staffList: Array<Person>;
+  fetchStaffList: () => void;
+};
+
+export class StaffCaurusel extends React.Component<Props> {
   componentDidMount() {
     const { staffList = [], fetchStaffList } = this.props;
     if (staffList.length === 0) {
@@ -19,15 +25,16 @@ export class StaffCaurusel extends React.Component {
     }
   }
 
-  renderStaffItems = staffList => staffList.map(worker => (
-    <Link to={`/staff/${worker.id}`} className='caurusel-item' key={v4()}>
-      <img
-        className='caurusel-item__image'
-        src={worker.photo}
-        alt={worker.name}
-      />
-    </Link>
-  ));
+  renderStaffItems = (staffList: Array<Person>) =>
+    staffList.map((worker) => (
+      <Link to={`/staff/${worker.id}`} className="caurusel-item" key={v4()}>
+        <img
+          className="caurusel-item__image"
+          src={worker.photo}
+          alt={worker.name}
+        />
+      </Link>
+    ));
 
   render() {
     const { staffList } = this.props;
@@ -39,7 +46,7 @@ export class StaffCaurusel extends React.Component {
       swipeToSlide: false,
     };
     return (
-      <div className='caurusel'>
+      <div className="caurusel">
         <Slider {...settings}>
           <AddUserRound />
           {this.renderStaffItems(staffList)}

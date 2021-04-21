@@ -8,7 +8,7 @@ module.exports = (_, argv) => {
   const isDevelopment = argv.mode === 'development';
 
   return {
-    entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['babel-polyfill', './src/index.tsx'],
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[hash].js',

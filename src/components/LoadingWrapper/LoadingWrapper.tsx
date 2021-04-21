@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { Loader } from 'components/Loader/Loader';
 
-export const LoadingWrapper = ({
+type Props = {
+  loading: boolean;
+  hasError: boolean;
+  errorMessage: string;
+  children: ReactElement;
+};
+
+export const LoadingWrapper: React.FC<Props> = ({
   loading,
   hasError,
   errorMessage,
