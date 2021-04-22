@@ -10,17 +10,17 @@ export const sendCommentStart = () => ({
   type: SEND_COMMENT_START,
 });
 
-export const sendCommentSuccess = (payload) => ({
+export const sendCommentSuccess = (payload: any) => ({
   type: SEND_COMMENT_SUCCESS,
   payload,
 });
 
-export const sendCommentFail = (payload) => ({
+export const sendCommentFail = (payload: any) => ({
   type: SEND_COMMENT_FAIL,
   payload,
 });
 
-export const sendComment = (data) => async (dispatch) => {
+export const sendComment = (data: any) => async (dispatch: any) => {
   dispatch(sendCommentStart());
   try {
     const response = await request.post('add-comment/', data);

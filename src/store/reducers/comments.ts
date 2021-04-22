@@ -1,7 +1,7 @@
 import {
-  ADD_USER_START,
-  ADD_USER_SUCCESS,
-  ADD_USER_FAIL,
+  SEND_COMMENT_START,
+  SEND_COMMENT_SUCCESS,
+  SEND_COMMENT_FAIL,
 } from '../actionTypes';
 
 export const initialState = {
@@ -10,23 +10,25 @@ export const initialState = {
   errors: {},
 };
 
-export const addUser = (state = initialState, action) => {
+export const comments = (state = initialState, action: any) => {
   switch (action.type) {
-    case ADD_USER_START:
+    case SEND_COMMENT_START:
       return {
         ...state,
         isSending: true,
         hasError: false,
         errors: {},
       };
-    case ADD_USER_SUCCESS:
+
+    case SEND_COMMENT_SUCCESS:
       return {
         ...state,
         isSending: false,
         hasError: false,
         errors: {},
       };
-    case ADD_USER_FAIL:
+
+    case SEND_COMMENT_FAIL:
       return {
         ...state,
         isSending: false,

@@ -12,7 +12,7 @@ export const initialState = {
   errors: {},
 };
 
-export const staffList = (state = initialState, action) => {
+export const staffList = (state = initialState, action: any) => {
   switch (action.type) {
     case FETCH_STAFF_LIST_START:
       return {

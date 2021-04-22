@@ -20,7 +20,7 @@ export const initialState = {
   errors: {},
 };
 
-export const employee = (state = initialState, action) => {
+export const employee = (state = initialState, action: any) => {
   switch (action.type) {
     case FETCH_EMPLOYEE_START:
       return {

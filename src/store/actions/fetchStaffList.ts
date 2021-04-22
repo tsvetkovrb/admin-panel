@@ -8,14 +8,14 @@ export const fetchStaffListStart = () => ({
   type: FETCH_STAFF_LIST_START,
 });
 
-export const fetchStaffListSuccess = (payload) => ({
+export const fetchStaffListSuccess = (payload: any) => ({
   type: FETCH_STAFF_LIST_SUCCESS,
   payload,
 });
-export const fetchStaffListFail = (payload) => ({
+export const fetchStaffListFail = (payload: any) => ({
   type: FETCH_STAFF_LIST_FAIL,
   payload,
 });
 
-export const fetchStaffList = () => (dispatch) =>
+export const fetchStaffList = () => (dispatch: any) =>
   dispatch(fetchStaffListStart());
