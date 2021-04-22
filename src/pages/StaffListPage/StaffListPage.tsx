@@ -1,13 +1,22 @@
 import React from 'react';
 
-import { EmployeeCard } from 'components/EmployeeCard/EmployeeCard';
+import { EmployeeCard } from 'components/EmployeeCard';
 
-import { LoadingWrapper } from 'components/LoadingWrapper/LoadingWrapper';
+import { LoadingWrapper } from 'components/LoadingWrapper';
 import { AddUserCard } from 'components/AddUser/AddUserCard';
 
 import './StaffListPage.scss';
+import { Person } from 'components/EmployeeCard/EmployeeCard';
 
-export class StaffListPage extends React.Component {
+type Props = {
+  fetchStaffList: () => void;
+  staffList: Person[];
+  isFetching: boolean;
+  hasError: boolean;
+  errors: { message: string };
+};
+
+export class StaffListPage extends React.Component<Props> {
   componentDidMount() {
     const { fetchStaffList, staffList } = this.props;
     if (staffList.length === 0) {
@@ -15,8 +24,8 @@ export class StaffListPage extends React.Component {
     }
   }
 
-  renderStaffList = (staffList) =>
-    staffList.map((employee) => (
+  renderStaffList = (staffList: Person[]) =>
+    staffList.map((employee: Person) => (
       <EmployeeCard key={employee.id} data={employee} />
     ));
 

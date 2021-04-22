@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Truncate from 'react-truncate';
+import { CommentType } from 'components/Comment';
 
 import './EmployeeCard.scss';
 
@@ -9,6 +10,8 @@ export type Person = {
   photo: string;
   name: string;
   position: string;
+  comments: CommentType[];
+  address: string;
 };
 
 type Props = {

@@ -3,17 +3,20 @@ import { fetchEmployee } from 'store/actions/fetchEmployee';
 
 import { EmployeePage } from 'pages/EmployeePage/EmployeePage';
 
-const handlingError = (errorsComment, errorsEmployee) => {
+const handlingError = (
+  errorsComment: { message?: string },
+  errorsEmployee: string,
+) => {
   if (errorsComment.message !== undefined) {
     return errorsComment;
   }
   return errorsEmployee;
 };
 
-const hasError = (hasErrorEmployee, hasErrorComment) =>
+const hasError = (hasErrorEmployee: boolean, hasErrorComment: boolean) =>
   hasErrorEmployee || hasErrorComment;
 
-const mapState = ({ employee, comments }) => ({
+const mapState = ({ employee, comments }: any) => ({
   isLoadingEmployeeData: employee.isFetching,
   employee: employee.employee,
   isSendingComment: comments.isSending,
