@@ -6,7 +6,7 @@
     background-color: #ddd;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
 
       width: 170px;
@@ -19,7 +19,7 @@
 
       opacity: 0.1;
 
-      background: url("../../../static/add-user.svg") center no-repeat;
+      background: url('../../../static/add-user.svg') center no-repeat;
       background-size: contain;
     }
   }

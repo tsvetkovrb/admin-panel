@@ -10,7 +10,7 @@
   width: 590px;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
 
     right: -14px;
@@ -24,7 +24,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: 1;
     right: -36px;

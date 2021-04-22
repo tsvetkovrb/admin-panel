@@ -8,7 +8,7 @@ module.exports = (_, argv) => {
   const isDevelopment = argv.mode === 'development';
 
   return {
-    entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['babel-polyfill', './src/index.tsx'],
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[hash].js',
@@ -23,7 +23,7 @@ module.exports = (_, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|ts|tsx)$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
@@ -55,7 +55,7 @@ module.exports = (_, argv) => {
         {
           test: /\.(scss|css)$/,
           exclude: '/node_modules/',
-          loader: [
+          use: [
             isDevelopment
               ? {
                 loader: 'style-loader',
@@ -98,7 +98,7 @@ module.exports = (_, argv) => {
     ],
     resolve: {
       modules: [path.resolve(__dirname, './src'), 'node_modules'],
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
         'react-dom': '@hot-loader/react-dom',
         components: path.resolve(__dirname, './src/components'),
